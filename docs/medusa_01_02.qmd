@@ -41,8 +41,8 @@ author:
   - name: Nicolas Bartzsch
     email: nbartzsch@ethz.ch
     affiliation: 
-      - name: Another Institution
-        url: https://example.com
+      - name: ARIS
+        url: https://aris-space.ch/perseus-2024/
 editor: visual
 format:
   html:
@@ -73,7 +73,7 @@ library(plotly)
 #############################################################################
 # Import data
 processed_data_sens_1 <- read_csv(here("data", "processed_data/Medusa_01/second_firing", "filtered_signal_2.csv"))
-processed_data_sens <- read_csv(here("data", "processed_data/Medusa_01/second_firin", "filtered_signal_1.csv"))
+processed_data_sens <- read_csv(here("data", "processed_data/Medusa_01/second_firing", "filtered_signal_1.csv"))
 
 #############################################################################
 # Only edit above this line

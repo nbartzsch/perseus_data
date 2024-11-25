@@ -35,6 +35,10 @@ subtitle: "First Firing"
 date: 16.11.2024
 author:
   - name: PERSEUS
+    affiliation: 
+      - name: ARIS
+        url: https://aris-space.ch/perseus-2024/
+  - name: Nicolas Bartzsch
     email: nbartzsch@ethz.ch
     affiliation: 
       - name: ARIS
