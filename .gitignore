@@ -1,0 +1,15 @@
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+.DS_Store
+
+#Ignore all csv
+*.csv
+
+#Ignore all pdf
+*.pdf
+
+#Ignore all png
+*.png
+

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PERSEUS Data</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 40px;
+            flex-direction: column;
+            font-family: Helvetica, Arial, sans-serif;
+            background-color: #0d2566; /* Changed background color to #0d2566 */
+            color: white; /* Changed font color to white */
+            position: relative; /* Added position relative */
+            overflow: auto; /* Allow scrolling */
+        }
+
+        .button {
+            border: 3px solid white; /* Changed border color to white */
+            background-color: #0d2566; /* Changed button background color to #0d2566 */
+            color: white; /* Changed button font color to white */
+            padding: 20px 40px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 30px;
+            margin: 10px 10px;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+            border-radius: 10px;
+        }
+
+        .button:hover {
+            background-color: #e52528; /* Changed hover background color to red */
+            color: white; /* Changed hover font color to white */
+        }
+
+        .button-container {
+            margin-top: 50px;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .logo-container img {
+            width: 150px;
+            height: auto;
+            margin-right: 10px;
+        }
+
+        .small-logo {
+            position: absolute;
+            top: 40px;
+            left: 40px;
+            width: 120px;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <img src="website_images/aris_logo.svg" alt="Small Logo" class="small-logo">
+    <img src="website_images/perseus_logo.svg" alt="Logo 1" style="width: 400px; height: auto; margin-top: 40px;">
+    <div style="height: 40px;"></div>
+    <h1 style="font-size: 3em; margin-bottom: 10px;">PERSEUS</h1>
+    <h2 style="font-size: 2em; margin-top: 0;">Hot-Fire Data</h2>
+    
+    <div style="width: 50%; height: 60px; background-color: #0d2566; margin-top: 100px; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;">
+        <h2 style="margin: 0; width: 100%; text-align: left;">Medusa 01</h2>
+        <hr style="width: 100%; border: 1px solid white;">
+    </div>
+    <div class="button-container">
+        <a href="medusa_01.html" class="button">Firing 1</a>
+        <a href="medusa_01.html" class="button">Firing 2</a>
+        <!-- <a href="page3.html" class="button">Medusa 03</a> -->
+    </div>
+
+    <div style="width: 500px; height: 100px;"></div>
+    
+    <footer style="margin-top:50px; margin-bottom: 20px; width: 100%; text-align: center; color: white;">
+        <p>© 2024 PERSEUS</p>
+        <p>Nicolas Bartzsch</p>
+    </footer>
+</body>
+</html>
