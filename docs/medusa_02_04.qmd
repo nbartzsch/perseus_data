@@ -6,18 +6,18 @@
 #############################################################################
 
 # OSS Data
-oss_ori <- 2.0
-oss_mnl_p <- 39
-oss_rnl_p <- 38
-oss_pln_p <- 12
-oss_mf <- 60
+oss_ori <- 3.0
+oss_mnl_p <- NA
+oss_rnl_p <- 51
+oss_pln_p <- NA
+oss_mf <- NA
 
 # FSS Data
-fss_ori <- 3.3
+fss_ori <- 2.0
 fss_mnl_p <- NA
-fss_rnl_p <- 30
-fss_pln_p <- 12
-fss_mf <- 17.2
+fss_rnl_p <- 42
+fss_pln_p <- NA
+fss_mf <- NA
 
 # PRDT Data
 ign_oxi_p <- 15
@@ -30,9 +30,9 @@ ign_fue_nv <- 9
 ```
 
 ---
-title: "PERSEUS Medusa 01"
-subtitle: "First Firing"
-date: 16.11.2024
+title: "PERSEUS Medusa 02"
+subtitle: "Fourth Firing - Detonation Setpoint"
+date: today
 author:
   - name: PERSEUS
     affiliation: 
@@ -72,8 +72,8 @@ library(plotly)
 # Only edit below this line
 #############################################################################
 # Import data
-processed_data_sens_1 <- read_csv(here("data", "processed_data/Medusa_01/first_firing", "filtered_signal_2.csv"))
-processed_data_sens <- read_csv(here("data", "processed_data/Medusa_01/first_firing", "filtered_signal_1.csv"))
+processed_data_sens_1 <- read_csv(here("data", "processed_data/Medusa_02/detonation/firing_04", "filtered_signal_2.csv"))
+processed_data_sens <- read_csv(here("data", "processed_data/Medusa_02/detonation/firing_04", "filtered_signal_1.csv"))
 
 #############################################################################
 # Only edit above this line
@@ -92,10 +92,10 @@ This section contains all information about the setup of the system. This helps 
 #Create OSS talbe data
 table_geom_oss <- data.frame(
   oss_ori = paste(oss_ori, "[mm]"),
-  oss_mnl_p = paste(oss_mnl_p, "[bar]"),
-  oss_rnl_p = paste(oss_rnl_p, "[bar]"),
-  oss_pln_p = paste(oss_pln_p, "[bar]"),
-  oss_mf  = paste(oss_mf , "[g/s]")
+  #oss_mnl_p = paste(oss_mnl_p, "[bar]"),
+  oss_rnl_p = paste(oss_rnl_p, "[bar]")
+  #oss_pln_p = paste(oss_pln_p, "[bar]"),
+  #oss_mf  = paste(oss_mf , "[g/s]")
 )
 # Create OSS table
 table_geom_oss |>
@@ -105,10 +105,10 @@ table_geom_oss |>
     ) |>
     cols_label(
         oss_ori = ("Orifice Size"),
-        oss_mnl_p = ("Mainline"),
-        oss_rnl_p = ("Runline"),
-        oss_pln_p = ("Plenum"),
-        oss_mf = ("Mass Flow")
+        #oss_mnl_p = ("Mainline"),
+        oss_rnl_p = ("Runline")
+        #oss_pln_p = ("Plenum"),
+        #oss_mf = ("Mass Flow")
     ) |>
     cols_align(align = "center")
 
@@ -116,10 +116,10 @@ table_geom_oss |>
 #Create FSS talbe data
 table_geom_fss <- data.frame(
   fss_ori = paste(fss_ori, "[mm]"),
-  fss_mnl_p = paste(fss_mnl_p, "[bar]"),
-  fss_rnl_p = paste(fss_rnl_p, "[bar]"),
-  fss_pln_p = paste(fss_pln_p, "[bar]"),
-  fss_mf  = paste(fss_mf , "[g/s]")
+  #fss_mnl_p = paste(fss_mnl_p, "[bar]"),
+  fss_rnl_p = paste(fss_rnl_p, "[bar]")
+  #fss_pln_p = paste(fss_pln_p, "[bar]"),
+  #fss_mf  = paste(fss_mf , "[g/s]")
 )
 # Create FSS table
 table_geom_fss |>
@@ -129,10 +129,10 @@ table_geom_fss |>
     ) |>
     cols_label(
         fss_ori = ("Orifice Size"),
-        fss_mnl_p = ("Mainline"),
-        fss_rnl_p = ("Runline"),
-        fss_pln_p = ("Plenum"),
-        fss_mf = ("Mass Flow")
+        #fss_mnl_p = ("Mainline"),
+        fss_rnl_p = ("Runline")
+        #fss_pln_p = ("Plenum"),
+        #fss_mf = ("Mass Flow")
     ) |>
     cols_align(align = "center")
 
@@ -162,17 +162,17 @@ table_geom_fss |>
 
 The Figures below show the unfiltered sensor response of both sensors. The sensors are offset by 90° in the combustion chamber and at different distances from the injector plate. The data below was gathered by Kistler sensors of type 601CAA placed in a recessed mounting chamber in the combustion chamber. A protective paste has been was applied to protect the sensors from thermal shock.
 
-![](png_plots/Medusa_01/first_firing/response_time_01.svg){fig-align="center" width="500"}
+![](png_plots/Medusa_02/detonation/firing_04/response_time_01.svg){fig-align="center" width="500"}
 
-![](png_plots/Medusa_01/first_firing/response_time_02.svg){fig-align="center" width="500"}
+![](png_plots/Medusa_02/detonation/firing_04/response_time_02.svg){fig-align="center" width="500"}
 
 ### Frequency Analysis
 
 To asses the what frequencies are present in our sensor response we can look at the short-time Fourier transform of the signal and the entire spectrum.
 
-![](png_plots/Medusa_01/first_firing/stft_01.svg){fig-align="center" width="500"}
+![](png_plots/Medusa_02/detonation/firing_04/stft_01.svg){fig-align="center" width="500"}
 
-![](png_plots/Medusa_01/first_firing/stft_02.svg){fig-align="center" width="500"}
+![](png_plots/Medusa_02/detonation/firing_04/stft_02.svg){fig-align="center" width="500"}
 
 @fig-fft shows the spectrum of the filtered signal of one sensor. **All the data shown below has been processed**. The original signal has been filtered with a High-Pass 4th order Butterworth filter with corner frequency at 1 kHz and a Low-Pass Butterworth filter with corner frequency at 65 kHz. The filtering was done to remove sensor drift, disturbances, Helmholtz Chamber resonance, high frequency noise etc. Both sensors showed a similar spectrum (only the magnitude of the peaks changed slightly). Both showed a clear peak around 14.5 kHz.
 

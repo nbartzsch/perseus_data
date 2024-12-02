@@ -162,17 +162,17 @@ table_geom_fss |>
 
 The Figures below show the unfiltered sensor response of both sensors. The sensors are offset by 90° in the combustion chamber and at different distances from the injector plate. The data below was gathered by Kistler sensors of type 601CAA placed in a recessed mounting chamber in the combustion chamber. A protective paste has been was applied to protect the sensors from thermal shock.
 
-![](images/response_time_01-01.svg){fig-align="center" width="500"}
+![](png_plots/Medusa_02/deflagration/firing_02/response_time_01.svg){fig-align="center" width="500"}
 
-![](images/response_time_02-01.svg){fig-align="center" width="500"}
+![](png_plots/Medusa_02/deflagration/firing_02/response_time_02.svg){fig-align="center" width="500"}
 
 ### Frequency Analysis
 
 To asses the what frequencies are present in our sensor response we can look at the short-time Fourier transform of the signal and the entire spectrum.
 
-![](images/stft_01-01.svg){fig-align="center" width="500"}
+![](png_plots/Medusa_02/deflagration/firing_02/stft_01.svg){fig-align="center" width="500"}
 
-![](images/stft_02-01.svg){fig-align="center" width="500"}
+![](png_plots/Medusa_02/deflagration/firing_02/stft_02.svg){fig-align="center" width="500"}
 
 @fig-fft shows the spectrum of the filtered signal of one sensor. **All the data shown below has been processed**. The original signal has been filtered with a High-Pass 4th order Butterworth filter with corner frequency at 1 kHz and a Low-Pass Butterworth filter with corner frequency at 65 kHz. The filtering was done to remove sensor drift, disturbances, Helmholtz Chamber resonance, high frequency noise etc. Both sensors showed a similar spectrum (only the magnitude of the peaks changed slightly). Both showed a clear peak around 14.5 kHz.
 
