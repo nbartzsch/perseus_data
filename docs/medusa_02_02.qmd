@@ -9,15 +9,15 @@
 oss_ori <- 3.0
 oss_mnl_p <- NA
 oss_rnl_p <- 21
-oss_pln_p <- NA
-oss_mf <- NA
+oss_pln_p <- 5.4
+oss_mf <- 35.3
 
 # FSS Data
 fss_ori <- 2.4
 fss_mnl_p <- NA
 fss_rnl_p <- 19.2
-fss_pln_p <- NA
-fss_mf <- NA
+fss_pln_p <- 9.5
+fss_mf <- 15.9
 
 # PRDT Data
 ign_oxi_p <- 15
@@ -32,7 +32,7 @@ ign_fue_nv <- 9
 ---
 title: "PERSEUS Medusa 02"
 subtitle: "Second Firing - Deflagration Setpoint"
-date: today
+date: 02.12.2024
 author:
   - name: PERSEUS
     affiliation: 
@@ -93,9 +93,9 @@ This section contains all information about the setup of the system. This helps 
 table_geom_oss <- data.frame(
   oss_ori = paste(oss_ori, "[mm]"),
   #oss_mnl_p = paste(oss_mnl_p, "[bar]"),
-  oss_rnl_p = paste(oss_rnl_p, "[bar]")
-  #oss_pln_p = paste(oss_pln_p, "[bar]"),
-  #oss_mf  = paste(oss_mf , "[g/s]")
+  oss_rnl_p = paste(oss_rnl_p, "[bar]"),
+  oss_pln_p = paste(oss_pln_p, "[bar]"),
+  oss_mf  = paste(oss_mf , "[g/s]")
 )
 # Create OSS table
 table_geom_oss |>
@@ -106,9 +106,9 @@ table_geom_oss |>
     cols_label(
         oss_ori = ("Orifice Size"),
         #oss_mnl_p = ("Mainline"),
-        oss_rnl_p = ("Runline")
-        #oss_pln_p = ("Plenum"),
-        #oss_mf = ("Mass Flow")
+        oss_rnl_p = ("Runline"),
+        oss_pln_p = ("Plenum"),
+        oss_mf = ("Mass Flow")
     ) |>
     cols_align(align = "center")
 
@@ -117,9 +117,9 @@ table_geom_oss |>
 table_geom_fss <- data.frame(
   fss_ori = paste(fss_ori, "[mm]"),
   #fss_mnl_p = paste(fss_mnl_p, "[bar]"),
-  fss_rnl_p = paste(fss_rnl_p, "[bar]")
-  #fss_pln_p = paste(fss_pln_p, "[bar]"),
-  #fss_mf  = paste(fss_mf , "[g/s]")
+  fss_rnl_p = paste(fss_rnl_p, "[bar]"),
+  fss_pln_p = paste(fss_pln_p, "[bar]"),
+  fss_mf  = paste(fss_mf , "[g/s]")
 )
 # Create FSS table
 table_geom_fss |>
@@ -130,9 +130,9 @@ table_geom_fss |>
     cols_label(
         fss_ori = ("Orifice Size"),
         #fss_mnl_p = ("Mainline"),
-        fss_rnl_p = ("Runline")
-        #fss_pln_p = ("Plenum"),
-        #fss_mf = ("Mass Flow")
+        fss_rnl_p = ("Runline"),
+        fss_pln_p = ("Plenum"),
+        fss_mf = ("Mass Flow")
     ) |>
     cols_align(align = "center")
 

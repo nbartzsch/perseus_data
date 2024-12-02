@@ -9,15 +9,15 @@
 oss_ori <- 3.0
 oss_mnl_p <- NA
 oss_rnl_p <- 51
-oss_pln_p <- NA
-oss_mf <- NA
+oss_pln_p <- 15.6
+oss_mf <- 79.5
 
 # FSS Data
 fss_ori <- 2.0
 fss_mnl_p <- NA
 fss_rnl_p <- 42
-fss_pln_p <- NA
-fss_mf <- NA
+fss_pln_p <- 16
+fss_mf <- 23.7
 
 # PRDT Data
 ign_oxi_p <- 15
@@ -32,7 +32,7 @@ ign_fue_nv <- 9
 ---
 title: "PERSEUS Medusa 02"
 subtitle: "Third Firing - Detonation Setpoint"
-date: today
+date: 02.12.2024
 author:
   - name: PERSEUS
     affiliation: 
@@ -93,9 +93,9 @@ This section contains all information about the setup of the system. This helps 
 table_geom_oss <- data.frame(
   oss_ori = paste(oss_ori, "[mm]"),
   #oss_mnl_p = paste(oss_mnl_p, "[bar]"),
-  oss_rnl_p = paste(oss_rnl_p, "[bar]")
-  #oss_pln_p = paste(oss_pln_p, "[bar]"),
-  #oss_mf  = paste(oss_mf , "[g/s]")
+  oss_rnl_p = paste(oss_rnl_p, "[bar]"),
+  oss_pln_p = paste(oss_pln_p, "[bar]"),
+  oss_mf  = paste(oss_mf , "[g/s]")
 )
 # Create OSS table
 table_geom_oss |>
@@ -106,9 +106,9 @@ table_geom_oss |>
     cols_label(
         oss_ori = ("Orifice Size"),
         #oss_mnl_p = ("Mainline"),
-        oss_rnl_p = ("Runline")
-        #oss_pln_p = ("Plenum"),
-        #oss_mf = ("Mass Flow")
+        oss_rnl_p = ("Runline"),
+        oss_pln_p = ("Plenum"),
+        oss_mf = ("Mass Flow")
     ) |>
     cols_align(align = "center")
 
@@ -117,9 +117,9 @@ table_geom_oss |>
 table_geom_fss <- data.frame(
   fss_ori = paste(fss_ori, "[mm]"),
   #fss_mnl_p = paste(fss_mnl_p, "[bar]"),
-  fss_rnl_p = paste(fss_rnl_p, "[bar]")
-  #fss_pln_p = paste(fss_pln_p, "[bar]"),
-  #fss_mf  = paste(fss_mf , "[g/s]")
+  fss_rnl_p = paste(fss_rnl_p, "[bar]"),
+  fss_pln_p = paste(fss_pln_p, "[bar]"),
+  fss_mf  = paste(fss_mf , "[g/s]")
 )
 # Create FSS table
 table_geom_fss |>
@@ -130,9 +130,9 @@ table_geom_fss |>
     cols_label(
         fss_ori = ("Orifice Size"),
         #fss_mnl_p = ("Mainline"),
-        fss_rnl_p = ("Runline")
-        #fss_pln_p = ("Plenum"),
-        #fss_mf = ("Mass Flow")
+        fss_rnl_p = ("Runline"),
+        fss_pln_p = ("Plenum"),
+        fss_mf = ("Mass Flow")
     ) |>
     cols_align(align = "center")
 
@@ -218,12 +218,12 @@ interactive_plot
 
 ### Sensor Response
 
-@fig-resp-1 shows a section of the filtered signal over 1 ms. We can determine the period $T$ of the signal to be $T \approx 0.067$ ms which translates to a frequency of $f = \frac{1}{T} \approx 14.9$ kHz. The responses of both sensors are shown in the plot.
+@fig-resp-1 shows a section of the filtered signal over 1 ms. The responses of both sensors are shown in the plot.
 
 ```{r}
 #| label: fig-resp-1
 #| fig-cap: "Segment of sensor signal during 1 ms whit some phase bewtween both signals"
-lower_time <- 0.82801 # 4.2535, 4.3678, 4.3126, 4.00469, 4.26432
+lower_time <- 3.6958 # 4.2535, 4.3678, 4.3126, 4.00469, 4.26432
 upper_time <- lower_time + 0.001
 
 plot_data_1_1 <- processed_data_sens_1 |>
@@ -252,7 +252,7 @@ Other sections, like the one in @fig-resp-2, show a very small phase-shift.
 ```{r}
 #| label: fig-resp-2
 #| fig-cap: "Segment of sensor signal during 1 ms with little phase shift"
-lower_time <- 0.8330111 #83019 
+lower_time <- 3.4005 #83019 
 upper_time <- lower_time + 0.001
 
 plot_data_2 <-  processed_data_sens |>
@@ -284,12 +284,12 @@ Lastly a bigger section of the signal of the "stable" part of the firing is show
 #| label: fig-resp-3
 #| fig-cap: "Sensor response of the 'stable' section of the firing"
 plot_data_3 <-  processed_data_sens |>
-  filter(time < 1) |>
-  filter(time > 0.8)
+  filter(time < 3.85) |>
+  filter(time > 3.65)
 
 plot_data_3_1 <-  processed_data_sens_1 |>
-  filter(time < 1) |>
-  filter(time > 0.8)
+  filter(time < 3.85) |>
+  filter(time > 3.65)
 
 p <- ggplot() +
   geom_path(data = plot_data_3_1, aes(x = time, y = value, color = "Sensor 2")) +
