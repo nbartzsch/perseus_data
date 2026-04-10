@@ -3,6 +3,7 @@
 .RData
 .Ruserdata
 .DS_Store
+.venv/
 
 #Ignore all csv
 *.csv

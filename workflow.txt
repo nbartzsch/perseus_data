@@ -1,0 +1,13 @@
+### 
+This document highlights the steps needed to plot data starting from Kistler sensor data in txt file format
+###
+
+1. 
+Start with kistler_data_analysis.py to convert the txt file to a csv file
+
+2. 
+Use kistler_data_processing.R to normalize time stamps and crop the csv file to only include the wanted time interval
+
+3. The file kistler_filtering.py applies both an high- and low-pass Butterworth fitler to the signal to remove the thermal drift and high frequency noise. 
+
+The reulsting csv si then ready for plotting in the .qmd files. 
