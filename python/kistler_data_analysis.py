@@ -1,12 +1,15 @@
 import pandas as pd
-import matplotlib.pyplot as plt
 
 # Load the data
-raw_data_path = 'data/raw_data_txt/Medusa_02/deflagration/firing_02/Medusa_02_deflagration_02.txt'
-output_csv_path = 'data/raw_data_csv/Medusa_02/deflagration/firing_02/Medusa_02_deflagration_02.csv'
+raw_data_path = (
+    "data/raw_data_txt/Medusa_02/deflagration/firing_02/Medusa_02_deflagration_02.txt"
+)
+output_csv_path = (
+    "data/raw_data_csv/Medusa_02/deflagration/firing_02/Medusa_02_deflagration_02.csv"
+)
 
 # Read the data with whitespace separator
-data = pd.read_csv(raw_data_path, sep=r'\s+', header=0)
+data = pd.read_csv(raw_data_path, sep=r"\s+", header=0)
 
 # Save it as a CSV file
 data.to_csv(output_csv_path, index=False)

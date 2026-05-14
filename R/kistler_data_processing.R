@@ -2,9 +2,9 @@ library(tidyverse)
 library(dplyr)
 library(readr)
 
-raw_data_sens <- read.csv('data/raw_data_csv/Medusa_02/deflagration/firing_02/Medusa_02_deflagration_02.csv')
+raw_data_sens <- read.csv("data/raw_data_csv/Medusa_02/deflagration/firing_02/Medusa_02_deflagration_02.csv")
 
-processed_data_sens <-  raw_data_sens 
+processed_data_sens <- raw_data_sens
 
 min_value <- min(processed_data_sens$s)
 max_value <- max(processed_data_sens$pC)
@@ -27,7 +27,7 @@ processed_data_sens <- processed_data_sens |>
 min_value <- min(processed_data_sens$s)
 processed_data_sens$s <- processed_data_sens$s - min_value
 
-# ggplot(processed_data_sens, aes(x = s, 
+# ggplot(processed_data_sens, aes(x = s,
 #                                 y = pC))+
 #   geom_path()+
 #   theme_minimal()
